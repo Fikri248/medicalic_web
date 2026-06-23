@@ -149,7 +149,7 @@
             <p>Admin Login Form</p>
         </div>
 
-        <form class="login-form" method="POST" action="{{ route('login') }}">
+        <form class="login-form" method="POST" action="{{ url('/login') }}">
             @csrf
 
             <div class="form-group">
