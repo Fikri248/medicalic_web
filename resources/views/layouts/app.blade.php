@@ -126,7 +126,8 @@
         }
         document.addEventListener('DOMContentLoaded', function() {
             const dynamicText = document.querySelector(".typing-text span");
-            const words = ["APOTEK MEDICALIC", "By Kelompok 2", "Admin Fikri", "Admin Fahrezy", "Admin Akhdan"];
+            const words = ["APOTEK MEDICALIC"];
+// const words = ["APOTEK MEDICALIC", "By Kelompok 2", "Admin Fikri", "Admin Fahrezy", "Admin Akhdan"];
 
             let wordIndex = 0;
             let charIndex = 0;

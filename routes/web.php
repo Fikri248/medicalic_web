@@ -9,14 +9,18 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\Auth\LoginController;
 
-// route login
-Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+// Halaman login utama di root
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login.show');
+
+// Route bawaan untuk proses login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
 // halaman login hanya dapat diakses di localhost:8000
 if (request()->getHttpHost() === 'localhost:8000') {
-    Auth::routes(['register' => false]); 
+    Auth::routes(['register' => false]);
 } else {
-    Auth::routes(['login' => false, 'register' => false]); 
+    Auth::routes(['login' => false, 'register' => false]);
 }
 
 // route bebas middleware

@@ -42,7 +42,6 @@
         </div>
     </div>
 
-    <!-- Card for Chart -->
     <div class="card mt-4">
         <div class="card-body">
             <h5 class="card-title">
@@ -64,14 +63,12 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Data for Chart.js
-        const labels = @json($chartLabels); // Nama obat
-        const data = @json($chartData); // Stok masing-masing obat
+        const labels = @json($chartLabels);
+        const data = @json($chartData);
 
-        // Chart.js configuration
         const ctx = document.getElementById('salesChart').getContext('2d');
         const salesChart = new Chart(ctx, {
-            type: 'bar', // Tipe chart
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -103,10 +100,10 @@
                     legend: {
                         labels: {
                             font: {
-                                size: 14 // Ukuran font legenda
+                                size: 14
                             }
                         },
-                        onClick: null // Menonaktifkan aksi klik pada legenda
+                        onClick: null
                     }
                 },
                 scales: {
@@ -118,5 +115,3 @@
         });
     </script>
 @endpush
-
-
